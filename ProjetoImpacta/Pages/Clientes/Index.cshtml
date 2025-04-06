@@ -1,0 +1,36 @@
+﻿@page
+@model ProjetoImpacta.Pages.Clientes.IndexModel
+@{
+}
+
+<br>
+<h2>Lista de clientes</h2>
+<a class="btn btn-primary btn-sm" href="/Clientes/Create">Novo Cliente</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>id</th>
+			<th>nome</th>
+			<th>email</th>
+			<th>telefone</th>
+			<th>endereco</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var item in Model.listaClientes)
+		{
+			<tr>
+				<td>@item.id</td>
+				<td>@item.Nome</td>
+				<td>@item.Email</td>
+				<td>@item.Telefone</td>
+				<td>@item.Endereco</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Clientes/Edit?id=@item.id">Editar</a>
+					<a class="btn btn-primary btn-sm" href="/Clientes/Delete?id=@item.id">Excluir</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
