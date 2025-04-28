@@ -1,0 +1,61 @@
+﻿@page
+@model ProjetoImpacta.Pages.Clientes.EditModel
+@{
+}
+
+<br>
+<h2>Editar Cliente</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+	</div>
+}
+
+<form method="post">
+	<input type="hidden" name="id" value="@Model.cliente.id" />
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Nome</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="nome" value="@Model.cliente.Nome" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Email</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="email" value="@Model.cliente.Email" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Telefone</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="telefone" value="@Model.cliente.Telefone" />
+		</div>
+	</div>
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Endereco</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="endereco" value="@Model.cliente.Endereco" />
+		</div>
+	</div>
+
+	@if (Model.sucessMessage.Length > 0)
+	{
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			<strong>@Model.sucessMessage</strong>
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+		</div>
+	}
+
+	<div class="row mb-3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary">Salvar</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<a class="btn btn-outline-primary" href="/" role="button">Cancelar</a>
+		</div>
+	</div>
+
+</form>
